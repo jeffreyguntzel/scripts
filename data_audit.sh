@@ -1,7 +1,18 @@
 #!/usr/bin/env bash
- 
-usage () { echo "You must specify an input and output file"; exit 1; }
- 
+
+help() {
+    echo -e "\nThis script generates an audit of whatever csv file you feed it.\n"
+    echo -e "It requires csvkit to work. For csvkit installation instructions, please visit https://github.com/wireservice/csvkit\n"
+    echo -e "Usage: $0 [input file] [output file]"
+}
+
+usage () { echo "Usage: $0 [input file] [output file]."; exit 1; }
+
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+    help
+    exit 0
+fi
+
 (($#==2)) || usage
  
 INPUTFILE="$1"
