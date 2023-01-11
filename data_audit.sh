@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
  
-usage () { echo "${0##*/} inputfile outputfile"; exit 1; }
+usage () { echo "You must specify an input and output file"; exit 1; }
  
 (($#==2)) || usage
  
