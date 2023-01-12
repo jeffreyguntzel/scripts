@@ -7,7 +7,7 @@ import pyperclip
 amount = float(sys.argv[1])
 
 # Calculate total based on 8.025% sales tax
-total = round(amount + (amount * .0825),2)
+total = round(amount * 1.0825),2)
 
 # Place total on clipboard
 pyperclip.copy(total)
